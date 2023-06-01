@@ -65,3 +65,32 @@ Put downloaded data into the following directory structure:
 ```
 python gen_bone_data.py --dataset {}
 ```
+
+## Training & Testing
+### Training
+- Change the config file depending on what you want:
+```
+# Example: training ML-STGNet on NTU-60 cross subject
+python main.py --config config/nturgbd-cross-subject/train_joint.yaml 
+python main.py --config config/nturgbd-cross-subject/train_bone.yaml
+```
+### Testing
+- To ensemble the results of joints and bones, run test firstly to generate the scores:
+```
+# Example: testing ML-STGNet on NTU-60 cross subject
+python main.py --config config/nturgbd-cross-subject/test_joint.yaml 
+python main.py --config config/nturgbd-cross-subject/test_bone.yaml
+```
+- Then combine the scores:
+```
+python ensemble.py --dataset ntu/xsub
+```
+- For evaluation on Smarthome
+```
+# Cross-subject:
+python evaluation-cs.py eval/smarthome/xsub/result_ensemble.txt 31
+# Cross-view:
+python evaluation-cv.py eval/smarthome/xview1/result_ensemble.txt 19
+python evaluation-cv.py eval/smarthome/xview2/result_ensemble.txt 19
+```
+
