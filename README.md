@@ -37,7 +37,7 @@ Put downloaded data into the following directory structure:
       ...
     - NTU_RGBD_samples_with_missing_skeletons.txt
     - NTU_RGBD120_samples_with_missing_skeletons.txt
-   - smarthone_raw/
+  - smarthone_raw/
     - smarthone_skeletons/
       ...    
 ```
