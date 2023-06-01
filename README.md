@@ -1,5 +1,5 @@
 # ML-STGNet
-PyTorch implementation of "Multilevel Spatial–Temporal Excited Graph Network for Skeleton-Based Action Recognition", TIP2022.
+PyTorch implementation of "Multilevel Spatial–Temporal Excited Graph Network for Skeleton-Based Action Recognition", T-IP 2022.
 [[PDF](https://ieeexplore.ieee.org/document/9997556/)]
 
 ## Data Preparation
