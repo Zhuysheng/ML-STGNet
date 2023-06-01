@@ -5,19 +5,19 @@ PyTorch implementation of "Multilevel Spatial–Temporal Excited Graph Network f
 ## Data Preparation
 Four datasets are used in our experiments.
 
-### NTU-60 and NTU-120 
+#### NTU-60 and NTU-120 
 1. Request datset here: http://rose1.ntu.edu.sg/Datasets/actionRecognition.asp
 2. Download the skeleton-only datasets:
   - `nturgbd_skeletons_s001_to_s017.zip`  (NTU RGB+D 60)
   - `nturgbd_skeletons_s018_to_s032.zip`  (NTU RGB+D 120, on top of NTU RGB+D 60)
 
-### Skeleton-Kinetics
+#### Skeleton-Kinetics
 1. Download dataset from ST-GCN repo: https://github.com/yysijie/st-gcn/blob/master/OLD_README.md#kinetics-skeleton
 
-### Toyota Smarthome
+#### Toyota Smarthome
 1. Download the raw data from https://github.com/YangDi666/SSTA-PRS#refined-pose-data (skeleton-v2.0 refined by SSTA-PRS)
 
-#### Directory Structure
+### Directory Structure
 Put downloaded data into the following directory structure:
 ```
 - data/
@@ -40,7 +40,7 @@ Put downloaded data into the following directory structure:
       ...    
 ```
 
-#### Generating Data
+### Generating Data
 1. NTU-60 and NTU-120:
 ```
  cd ./data_gen/ntu # or cd ./data_gen/ntu120
@@ -70,26 +70,28 @@ python gen_bone_data.py --dataset {}
 ### Training
 - Change the config file depending on what you want:
 ```
-# Example: training ML-STGNet on NTU-60 cross subject
+# Example: training ML-STGNet on NTU-60 cross-subject
 python main.py --config config/nturgbd-cross-subject/train_joint.yaml 
 python main.py --config config/nturgbd-cross-subject/train_bone.yaml
 ```
 ### Testing
 - To ensemble the results of joints and bones, run test firstly to generate the scores:
 ```
-# Example: testing ML-STGNet on NTU-60 cross subject
+# Example: testing ML-STGNet on NTU-60 cross-subject
 python main.py --config config/nturgbd-cross-subject/test_joint.yaml 
 python main.py --config config/nturgbd-cross-subject/test_bone.yaml
 ```
+
 - Then combine the scores:
 ```
 python ensemble.py --dataset ntu/xsub
 ```
-- For evaluation on Smarthome
+
+- One more step on Smarthome:
 ```
-# Cross-subject:
+# cross-subject
 python evaluation-cs.py eval/smarthome/xsub/result_ensemble.txt 31
-# Cross-view:
+# cross-view
 python evaluation-cv.py eval/smarthome/xview1/result_ensemble.txt 19
 python evaluation-cv.py eval/smarthome/xview2/result_ensemble.txt 19
 ```
