@@ -2,7 +2,7 @@
 PyTorch implementation of "Multilevel Spatial–Temporal Excited Graph Network for Skeleton-Based Action Recognition", T-IP 2022.
 [[PDF](https://ieeexplore.ieee.org/document/9997556/)]
 
-<img src="pipeline.png" width="90%">
+<img src="pipeline.png" width="50%">
 
 ## Data Preparation
 Four datasets are used in our experiments.
