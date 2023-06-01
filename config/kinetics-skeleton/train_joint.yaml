@@ -1,0 +1,46 @@
+
+work_dir: ./work_dir/kinetics/baseline_joint
+
+# feeder
+feeder: feeders.feeder.Feeder
+train_feeder_args:
+  data_path: ./data/kinetics/train_data_joint.npy
+  label_path: ./data/kinetics/train_label.pkl
+  debug: False
+
+test_feeder_args:
+  data_path: ./data/kinetics/val_data_joint.npy
+  label_path: ./data/kinetics/val_label.pkl
+
+# model
+model: model.baseline_kinetics.Model
+model_args:
+  num_class: 400
+  num_point: 18
+  num_person: 2
+  #num_gcn_scales: 8
+  #num_g3d_scales: 8
+  graph: graph.kinetics.AdjMatrixGraph
+
+# optim
+# weight_decay: 0.0005
+weight_decay: 0.0003
+# base_lr: 0.05
+base_lr: 0.1
+step: [45, 55]
+
+# training
+num_epoch: 65
+# device: [0, 1]
+device: [0, 1, 2, 3]
+# batch_size: 32
+batch_size: 128
+# forward_batch_size: 32
+forward_batch_size: 64
+# test_batch_size: 32
+test_batch_size: 128
+nesterov: True
+
+
+
+

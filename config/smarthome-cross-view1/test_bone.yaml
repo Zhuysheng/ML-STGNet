@@ -1,0 +1,24 @@
+# feeder
+feeder: feeders.feeder.Feeder
+test_feeder_args:
+  data_path: ./data/smarthome/xview1/val_data_bone.npy
+  label_path: ./data/smarthome/xview1/val_label.pkl
+  debug: False
+
+# model
+model: model.baseline_smarthome.Model
+model_args:
+  num_class: 19
+  num_point: 17
+  num_person: 2
+  in_channels: 2
+  graph: graph.smarthome.Graph
+
+# test 
+phase: test
+device: [0]
+test_batch_size: 16
+weights: runs/smarthome/smarthome_cv1_unik_bone-23-12216.pt
+work_dir: ./eval/smarthome/xview1/bone/
+#model_saved_name: ./runs/smarthome/smarthome_cv1_unik_test_bone
+save_score: True

@@ -1,0 +1,29 @@
+
+# feeder
+feeder: feeders.ctr_feeder.Feeder
+
+test_feeder_args:
+  data_path: data/ntu120/NTU120_CSet.npz
+  split: test
+  window_size: 64
+  p_interval: [0.95]
+  vel: False
+  bone: True
+  debug: False
+
+# model
+model: model.baseline.Model
+model_args:
+  num_class: 120
+  num_point: 25
+  num_person: 2
+  graph: graph.ntu_rgb_d.AdjMatrixGraph
+
+# test
+phase: test
+device: [0]
+test_batch_size: 256
+weights: ./pretrained_models/ntu120_xset_bone.pt
+
+work_dir: ./eval/ntu120/xset/bone/
+save_score: True
