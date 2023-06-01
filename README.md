@@ -16,3 +16,26 @@ Four datasets are used in our experiments.
 
 ### Toyota Smarthome
 1. Download the raw data from https://github.com/YangDi666/SSTA-PRS#refined-pose-data (skeleton-v2.0 refined by SSTA-PRS)
+
+#### Data Structure
+Put downloaded data into the following directory structure:
+```
+- data/
+  - kinetics_raw/
+    - kinetics_train/
+      ...
+    - kinetics_val/
+      ...
+    - kinetics_train_label.json
+    - keintics_val_label.json
+  - nturgbd_raw/
+    - nturgb+d_skeletons/     # from `nturgbd_skeletons_s001_to_s017.zip`
+      ...
+    - nturgb+d_skeletons120/  # from `nturgbd_skeletons_s018_to_s032.zip`
+      ...
+    - NTU_RGBD_samples_with_missing_skeletons.txt
+    - NTU_RGBD120_samples_with_missing_skeletons.txt
+   - smarthone_raw/
+    - smarthone_skeletons/
+      ...    
+```
