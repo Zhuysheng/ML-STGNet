@@ -96,3 +96,24 @@ python evaluation-cv.py eval/smarthome/xview1/result_ensemble.txt 19
 python evaluation-cv.py eval/smarthome/xview2/result_ensemble.txt 19
 ```
 
+## Acknowledgements
+
+This repo is based on
+  - [2s-AGCN](https://github.com/lshiwjx/2s-AGCN)
+  - [SGN](https://github.com/microsoft/SGN)
+  - [UNIK](https://github.com/YangDi666/UNIK)
+ 
+## Citation
+
+Please cite this work if you find it useful:
+```
+@ARTICLE{9997556,
+  author={Zhu, Yisheng and Shuai, Hui and Liu, Guangcan and Liu, Qingshan},
+  journal={IEEE Transactions on Image Processing}, 
+  title={Multilevel Spatial–Temporal Excited Graph Network for Skeleton-Based Action Recognition}, 
+  year={2023},
+  volume={32},
+  number={},
+  pages={496-508},
+  doi={10.1109/TIP.2022.3230249}}
+ ```
